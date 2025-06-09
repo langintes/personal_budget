@@ -1,9 +1,9 @@
 const express = require('express');
 const apiRouter = express.Router();
 
-apiRouter.get('/',(req,res,next) => {
-    const message = 'Hello, World';
-    res.send(message);
-});
+// Mount your existing envelopeRouter below at the '/envelopes' path.
+const envelopeRouter = require('./envelopes');
+apiRouter.use('/envelopes',envelopeRouter);
+
 
 module.exports = apiRouter;
