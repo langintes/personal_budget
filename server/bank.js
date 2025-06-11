@@ -1,5 +1,15 @@
 let envelopeCounter = 1;
 
+let envelopeList = [];
+
+const getEnvelopeList = () => {
+    return envelopeList;
+};
+
+const setEnvelopeList = (newList) => {
+    envelopeList = newList;
+}
+
 const envelope = (budget,title) => {
     return {
         id: `${envelopeCounter++}`,
@@ -8,4 +18,4 @@ const envelope = (budget,title) => {
       }
 };
 
-module.exports = {envelope}
+module.exports = {envelope, envelopeList, getEnvelopeList, setEnvelopeList}
